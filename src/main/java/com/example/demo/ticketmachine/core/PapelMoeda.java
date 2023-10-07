@@ -1,4 +1,4 @@
-package main.java.com.demo.ticketmachine.core;
+package com.example.demo.ticketmachine.core;
 
 /**
  *

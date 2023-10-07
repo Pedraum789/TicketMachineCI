@@ -1,7 +1,4 @@
-package main.java.com.demo.ticketmachine.core;
-
-import br.calebe.ticketmachine.exception.PapelMoedaInvalidaException;
-import br.calebe.ticketmachine.exception.SaldoInsuficienteException;
+package com.example.demo.ticketmachine.core;
 import java.util.Iterator;
 
 /**
@@ -20,7 +17,7 @@ public class TicketMachine {
         this.saldo = 0;
     }
 
-    public void inserir(int quantia) throws PapelMoedaInvalidaException {
+    public void inserir(int quantia) throws main.java.com.demo.ticketmachine.exception.PapelMoedaInvalidaException {
         boolean achou = false;
         for (int i = 0; i < papelMoeda.length && !achou; i++) {
             if (papelMoeda[i] == quantia) {
@@ -28,7 +25,7 @@ public class TicketMachine {
             }
         }
         if (!achou) {
-            throw new PapelMoedaInvalidaException();
+            throw new main.java.com.demo.ticketmachine.exception.PapelMoedaInvalidaException();
         }
         this.saldo += quantia;
     }
@@ -41,9 +38,9 @@ public class TicketMachine {
         return troco.getIterator();
     }
 
-    public String imprimir() throws SaldoInsuficienteException {
+    public String imprimir() throws main.java.com.demo.ticketmachine.exception.SaldoInsuficienteException {
         if (saldo < valor) {
-            throw new SaldoInsuficienteException();
+            throw new main.java.com.demo.ticketmachine.exception.SaldoInsuficienteException();
         }
         String result = "*****************\n";
         result += "*** R$ " + valor + ",00 ****\n";
